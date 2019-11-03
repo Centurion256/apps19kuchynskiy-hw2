@@ -4,11 +4,12 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.util.Arrays;
+import java.io.Serializable;
 import java.util.StringJoiner;
 
-public final class ImmutableArrayList implements ImmutableList
+public final class ImmutableArrayList implements ImmutableList, Serializable
 {
+    private static final long serialVersionUID = -7434910797490244008L;
     private Object[] array;
 
     public ImmutableArrayList()
@@ -80,7 +81,7 @@ public final class ImmutableArrayList implements ImmutableList
     {
         //Perhaps there is a way to implement add via addAll, but
         //I haven't figured that out yet.
-        
+
         //ImmutableArrayList newObject = this.copyOf();
         Object[] newArray = new Object[this.array.length + c.length];
         System.arraycopy(this.array, 0, newArray, 0, index);

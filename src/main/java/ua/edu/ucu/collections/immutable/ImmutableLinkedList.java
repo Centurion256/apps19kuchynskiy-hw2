@@ -10,11 +10,13 @@ import java.util.StringJoiner;
 public final class ImmutableLinkedList implements ImmutableList, Serializable
 {
 
+      private static final long serialVersionUID = 1037109004649311186L;
       private Node<Object> head;
       private int size;
 
-      private class Node<T> implements Serializable
+      private static class Node<T> implements Serializable
       {
+            private static final long serialVersionUID = -5940419144294972450L;
             protected Node<T> next = null;
             protected T data;
             
@@ -270,10 +272,10 @@ public final class ImmutableLinkedList implements ImmutableList, Serializable
       }
       public ImmutableLinkedList removeFirst()
       {
-            return (ImmutableLinkedList)this.remove(0);
+            return (ImmutableLinkedList) this.remove(0);
       }
       public ImmutableLinkedList removeLast()
       {
-            return (ImmutableLinkedList)this.remove(this.size);
+            return (ImmutableLinkedList) this.remove(this.size);
       }
 }
