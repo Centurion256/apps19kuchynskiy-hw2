@@ -228,7 +228,7 @@ public final class ImmutableLinkedList implements ImmutableList, Serializable
             int index = 0;
             while (ptr != null)
             {
-                  if (ptr.data == e)
+                  if (ptr.data.equals(e))
                   {
                         return index;
                   }
